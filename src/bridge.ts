@@ -50,7 +50,7 @@ export class FramJetBridge {
     options: Partial<FramJetBridgeOptions> = {}
   ) {
     this.$bridgeId = bridgeId;
-    this.$target = target;
+    this.$target = target ?? defaultTarget;
     this.$options = this.processOptions(options);
 
     this.$unsubscribeCallback = target.readMessages(this.$listener);

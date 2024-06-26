@@ -1,7 +1,7 @@
 {
   "name": "@framjet/bridge",
   "description": "A lightweight TypeScript library for seamless bridge communication and RPC using window.postMessage, ideal for cross-window and iframe interactions.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Aurimas Niekis <aurimas@niekis.lt>",
   "homepage": "https://github.com/framjet/typescript-framjet-bridge#readme",
