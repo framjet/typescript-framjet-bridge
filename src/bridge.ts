@@ -53,7 +53,7 @@ export class FramJetBridge {
     this.$target = target ?? defaultTarget;
     this.$options = this.processOptions(options);
 
-    this.$unsubscribeCallback = target.readMessages(this.$listener);
+    this.$unsubscribeCallback = this.$target.readMessages(this.$listener);
 
     this.isReady = new Promise((resolve, reject) => {
       const readyTimeout = setTimeout(() => {
