@@ -30,6 +30,7 @@ export interface FramJetBridgeOptions {
 }
 
 export class FramJetBridge {
+  private readonly $id: string;
   private readonly $bridgeId: string;
   private readonly $target: ITarget;
   private readonly $options: FramJetBridgeOptions;
@@ -49,6 +50,7 @@ export class FramJetBridge {
     target?: ITarget,
     options: Partial<FramJetBridgeOptions> = {}
   ) {
+    this.$id = crypto.randomUUID();
     this.$bridgeId = bridgeId;
     this.$target = target ?? defaultTarget;
     this.$options = this.processOptions(options);
@@ -149,6 +151,7 @@ export class FramJetBridge {
   public send<TMessage extends FramJetBridgeMessage>(msg: TMessage): void {
     this.sendPacket({
       __framjet_bridge__: 'framjet-bridge',
+      senderId: this.$id,
       bridgeId: this.$bridgeId,
       message: msg,
     });
@@ -178,7 +181,11 @@ export class FramJetBridge {
       return;
     }
 
-    if (!isBridgePacket(packet) || packet.bridgeId !== this.$bridgeId) {
+    if (
+      !isBridgePacket(packet) ||
+      packet.bridgeId !== this.$bridgeId ||
+      packet.senderId === this.$id
+    ) {
       return;
     }
 
