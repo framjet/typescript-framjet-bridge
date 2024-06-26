@@ -1,0 +1,46 @@
+{
+  "name": "@framjet/bridge",
+  "description": "A lightweight TypeScript library for seamless bridge communication and RPC using window.postMessage, ideal for cross-window and iframe interactions.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Aurimas Niekis <aurimas@niekis.lt>",
+  "homepage": "https://github.com/framjet/typescript-framjet-bridge#readme",
+  "contributors": [
+    {
+      "name": "Aurimas Niekis",
+      "email": "aurimas@niekis.lt",
+      "url": "https://aurimas.niekis.lt"
+    }
+  ],
+  "bugs": {
+    "bugs": {
+      "url": "https://github.com/framjet/typescript-framjet-bridge/issues",
+      "email": "team@framjet.dev"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/framjet/typescript-framjet-bridge.git"
+  },
+  "scripts": {
+    "build": "nx build"
+  },
+  "devDependencies": {
+    "@nx/eslint": "19.3.1",
+    "@nx/eslint-plugin": "19.3.1",
+    "@nx/rollup": "^19.3.1",
+    "@nx/workspace": "19.3.1",
+    "@typescript-eslint/eslint-plugin": "^7.3.0",
+    "@typescript-eslint/parser": "^7.3.0",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "nx": "19.3.1",
+    "prettier": "^2.6.2",
+    "typescript": "~5.4.2"
+  },
+  "nx": {
+    "includedScripts": []
+  },
+  "main": "./index.js",
+  "typings": "./src/index.d.ts"
+}

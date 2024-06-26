@@ -1,0 +1,49 @@
+{
+  "name": "framjet-bridge",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/framjet-bridge",
+        "main": "./src/index.ts",
+        "format": [
+          "esm",
+          "cjs"
+        ],
+        "compiler": "tsc",
+        "importPath": "@framjet/bridge",
+        "tsConfig": "./tsconfig.lib.json",
+        "generateExportsField": true,
+        "external": "all",
+        "typeCheck": false,
+        "assets": [
+          {
+            "glob": "README.md",
+            "input": ".",
+            "output": "."
+          },
+          {
+            "glob": "LICENSE",
+            "input": ".",
+            "output": "."
+          },
+          {
+            "glob": "*.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "command": "eslint ./src ./package.json"
+    }
+  }
+}
